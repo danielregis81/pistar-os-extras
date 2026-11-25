@@ -1,0 +1,7 @@
+# pistar-os-extras configuration — copy to /data/opt/pistar-extras/extras.conf
+# Port for the extras (CYD /cyd/status.json, Last Heard, flags, dashboard proxy).
+LISTEN=":8081"
+# yes = take over port 80 and move the Pi-Star MCP dashboard HTTP port to 8080
+# (HTTPS stays on 443). Only needed if something must reach the extras on port 80,
+# e.g. an existing Cloudflare Tunnel route pointing at http://localhost:80.
+TAKE_PORT80="no"

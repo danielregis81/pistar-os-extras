@@ -1,0 +1,4 @@
+bin/
+src/pistar-extras
+*.token
+extras.conf
