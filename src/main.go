@@ -263,6 +263,10 @@ func rows() []Row {
 			continue
 		}
 		cc := strings.ToLower(e.Extra.From)
+		// subdivisões ISO 3166-2 (ex.: gb-eng, gb-sct): usa o país (gb), que todo cliente conhece
+		if i := strings.IndexByte(cc, '-'); i == 2 {
+			cc = cc[:2]
+		}
 		if !ccRe.MatchString(cc) {
 			cc = ""
 		}
